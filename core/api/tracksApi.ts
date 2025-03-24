@@ -1,6 +1,7 @@
-import test, { APIRequestContext, APIResponse } from "@playwright/test";
-import { APIRoutes } from "../../utils/constants/routes";
-import { APIClient } from "../../utils/types/api/client";
+import test, { APIRequestContext, APIResponse } from '@playwright/test';
+
+import { APIRoutes } from '@/constants/routes';
+import { APIClient } from '@/models/common/client';
 
 export class TracksAPIClient implements APIClient {
   constructor(public context: APIRequestContext) {}
@@ -10,5 +11,4 @@ export class TracksAPIClient implements APIClient {
       return await this.context.get(`${APIRoutes.Tracks}/${trackId}`);
     });
   }
-
 }

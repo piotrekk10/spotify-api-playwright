@@ -1,4 +1,4 @@
-import { Track } from "./track";
+import { Track } from '@/models/tracks';
 
 export interface Tracks {
   href: string;

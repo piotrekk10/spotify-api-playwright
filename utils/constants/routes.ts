@@ -1,4 +1,6 @@
 export enum APIRoutes {
-  Token = "/api/token",
-  Tracks = "/v1/tracks",
+  Albums = '/v1/albums',
+  Artists = '/v1/artists',
+  Token = '/api/token',
+  Tracks = '/v1/tracks',
 }

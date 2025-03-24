@@ -1,7 +1,5 @@
-import { Artist } from "../artists/artist";
-import { ExternalUrls } from "../common/externalUrls";
-import { Image } from "../common/image";
-import { Restrictions } from "../common/restrictions";
+import { Artist } from '@/models/artists';
+import { ExternalUrls, Image } from '@/models/common';
 
 export interface Album {
   album_type: string;
@@ -14,7 +12,6 @@ export interface Album {
   name: string;
   release_date: string;
   release_date_precision: string;
-  restrictions?: Restrictions;
   type: string;
   uri: string;
   artists: Artist[];

@@ -1,0 +1,34 @@
+{
+  "compilerOptions": {
+    "allowJs": false,
+    "alwaysStrict": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "esnext",
+    "typeRoots": ["node_modules/@types"],
+    "baseUrl": ".",
+    "paths": {
+      "@/assertions/*": ["utils/assertions/*"],
+      "@/constants/*": ["utils/constants/*"],
+      "@/core/*": ["core/*"],
+      "@/data/*": ["utils/data/*"],
+      "@/models/*": ["utils/models/api/*"],
+      "@/reporters/*": ["utils/reporters/*"],
+      "@/schema/*": ["utils/schema/*"],
+      "@/tests/*": ["tests/*"]
+    },
+    "incremental": true
+  },
+  "exclude": ["node_modules", "public"],
+  "include": ["**/*.ts"]
+}

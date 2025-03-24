@@ -1,6 +1,7 @@
-import { APIRequestContext, request } from "@playwright/test";
-import { APIAuth } from "../../utils/types/api/authentication";
-import { getAuthAPIClient } from "../api/authentication-api";
+import { APIRequestContext, request } from '@playwright/test';
+
+import { getAuthAPIClient } from '@/core/api/authenticationApi';
+import { APIAuth } from '@/models/common/authentication';
 
 export const getAuthAPIContext = async ({
   authToken,

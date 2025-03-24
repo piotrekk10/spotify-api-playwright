@@ -1,4 +1,4 @@
-import { request } from "@playwright/test";
+import { request } from '@playwright/test';
 
 export const getDefaultAPIContext = async () => {
   return await request.newContext({

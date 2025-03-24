@@ -1,10 +1,9 @@
-import { ExternalUrls } from "../common/externalUrls";
+import { ExternalUrls } from '@/models/common';
 
-export interface Artist {
+export interface LinkedFrom {
   external_urls?: ExternalUrls;
   href?: string;
   id?: string;
-  name?: string;
   type?: string;
   uri?: string;
 }

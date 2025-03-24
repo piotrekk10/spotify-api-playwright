@@ -1,18 +1,13 @@
-import { Album } from "../albums/album";
-import { Artist } from "../artists/artist";
-import { ExternalIds } from "../common/externalIds";
-import { ExternalUrls } from "../common/externalUrls";
-import { Restrictions } from "../common/restrictions";
-import { LinkedFrom } from "./linkedFrom";
+import { Artist } from '@/models/artists';
+import { ExternalUrls, Restrictions } from '@/models/common';
+import { LinkedFrom } from '@/models/tracks';
 
-export interface TrackResponse {
-  album?: Album;
+export interface Track {
   artists?: Artist[];
   available_markets?: string[];
   disc_number?: number;
   duration_ms?: number;
   explicit?: boolean;
-  external_ids?: ExternalIds;
   external_urls?: ExternalUrls;
   href?: string;
   id?: string;
@@ -20,7 +15,6 @@ export interface TrackResponse {
   linked_from?: LinkedFrom;
   restrictions?: Restrictions;
   name?: string;
-  popularity?: number;
   preview_url?: string;
   track_number?: number;
   type?: string;

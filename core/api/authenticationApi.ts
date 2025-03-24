@@ -1,12 +1,9 @@
-import test, {
-  APIRequestContext,
-  expect,
-  request,
-} from "@playwright/test";
-import { APIRoutes } from "../../utils/constants/routes";
-import { APIClient } from "../../utils/types/api/client";
-import { AuthUser } from "../../utils/types/api/authentication";
-import { getDefaultAPIContext } from "../context/default-context";
+import test, { APIRequestContext, expect, request } from '@playwright/test';
+
+import { APIRoutes } from '@/constants/routes';
+import { getDefaultAPIContext } from '@/core/context/defaultContext';
+import { AuthUser } from '@/models/common';
+import { APIClient } from '@/models/common/client';
 
 class AuthAPIClient implements APIClient {
   constructor(public context: APIRequestContext) {}
@@ -18,9 +15,9 @@ class AuthAPIClient implements APIClient {
           baseURL: process.env.ACCOUNTS_URI_SPOTIFY,
         });
         return await authContext.post(APIRoutes.Token, {
-          headers: { "Content-Type": " application/x-www-form-urlencoded" },
+          headers: { 'Content-Type': ' application/x-www-form-urlencoded' },
           form: {
-            grant_type: "client_credentials",
+            grant_type: 'client_credentials',
             client_id: `${data.clientId}`,
             client_secret: `${data.clientSecret}`,
           },
@@ -29,7 +26,7 @@ class AuthAPIClient implements APIClient {
     const json = await response.json();
 
     expect(response.status()).toBe(200);
-    expect(json).toHaveProperty("access_token");
+    expect(json).toHaveProperty('access_token');
 
     return json.access_token;
   }
