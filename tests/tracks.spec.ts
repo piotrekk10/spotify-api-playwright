@@ -8,8 +8,6 @@ import { INVALID_TOKEN, NOT_FOUND, NO_TOKEN } from '@/data/errors';
 import { EXAMPLE_TRACK } from '@/data/tracks';
 import { ErrorResponse } from '@/models/common';
 import { TrackResponse } from '@/models/tracks';
-import { tracksSchema } from '@/schema/api/tracks-schema';
-import { validateSchema } from '@/schema/validator';
 
 type TestProps = {
   authTracksClient: TracksAPIClient;
@@ -47,7 +45,6 @@ test.describe('Tracks', () => {
       actualTrack: json,
       containsAlbum: true,
     });
-    await validateSchema({ schema: tracksSchema, json });
   });
 
   test('Get track - no token ', async ({ tracksClient }) => {

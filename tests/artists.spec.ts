@@ -41,7 +41,6 @@ test.describe('Artists', () => {
       api: response.url(),
     });
     await assertArtist({ expectedArtist: EXAMPLE_ARTIST, actualArtist: json });
-    //await validateSchema({ schema: artistsSchema, json });
   });
 
   test('Get artist - no token ', async ({ artistsClient }) => {

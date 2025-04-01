@@ -5,4 +5,9 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+
+# local env files
 .env.local
+
+# misc
+.DS_Store

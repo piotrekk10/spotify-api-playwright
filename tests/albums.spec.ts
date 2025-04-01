@@ -41,7 +41,6 @@ test.describe('Albums', () => {
       api: response.url(),
     });
     await assertAlbum({ expectedAlbum: EXAMPLE_ALBUM, actualAlbum: json });
-    //await validateSchema({ schema: albumsSchema, json });
   });
 
   test('Get album - no token ', async ({ albumsClient }) => {

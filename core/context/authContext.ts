@@ -1,11 +1,9 @@
-import { APIRequestContext, request } from '@playwright/test';
+import { APIRequestContext, request } from "@playwright/test";
 
-import { getAuthAPIClient } from '@/core/api/authenticationApi';
-import { APIAuth } from '@/models/common/authentication';
+import { getAuthAPIClient } from "@/core/api/authenticationApi";
+import { APIAuth } from "@/models/common/authentication";
 
-export const getAuthAPIContext = async ({
-  authToken,
-}: APIAuth): Promise<APIRequestContext> => {
+export const getAuthAPIContext = async ({ authToken }: APIAuth): Promise<APIRequestContext> => {
   if (!authToken) {
     const authClient = await getAuthAPIClient();
     authToken = await authClient.getAuthToken({
@@ -15,7 +13,7 @@ export const getAuthAPIContext = async ({
   }
 
   return request.newContext({
-    baseURL: process.env.BASE_URL_SPOTIFY,
+    baseURL: process.env.SPOTIFY_BASE_URL,
     extraHTTPHeaders: {
       Authorization: `Bearer ${authToken}`,
     },

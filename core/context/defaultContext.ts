@@ -1,7 +1,7 @@
-import { request } from '@playwright/test';
+import { request } from "@playwright/test";
 
 export const getDefaultAPIContext = async () => {
   return await request.newContext({
-    baseURL: process.env.BASE_URL_SPOTIFY,
+    baseURL: process.env.SPOTIFY_BASE_URL,
   });
 };
